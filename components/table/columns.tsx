@@ -5,10 +5,10 @@ import Image from "next/image";
 
 import { Doctors } from "@/constants";
 import { formatDateTime } from "@/lib/utils";
-import { Appointment } from "@/types/appwrite.types";
 
-import { AppointmentModal } from "../AppointmentModal";
-import StatusBadge from "../StatusBadge";
+import  AppointmentModal  from "../AppointmentModal";
+import  StatusBadge  from "../StatusBadge";
+import { Appointment } from "@/types/appwrite.type";
 
 export const columns: ColumnDef<Appointment>[] = [
   {
@@ -86,16 +86,12 @@ export const columns: ColumnDef<Appointment>[] = [
             userId={appointment.userId}
             appointment={appointment}
             type="schedule"
-            title="Schedule Appointment"
-            description="Please confirm the following details to schedule."
           />
           <AppointmentModal
             patientId={appointment.patient.$id}
             userId={appointment.userId}
             appointment={appointment}
             type="cancel"
-            title="Cancel Appointment"
-            description="Are you sure you want to cancel your appointment?"
           />
         </div>
       );
